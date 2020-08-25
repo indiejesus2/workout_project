@@ -1,0 +1,18 @@
+<h1>This is your workout:</h1>
+<%= link_to "edit workout", edit_workout_path(@workout)%> - 
+<%= link_to 'delete workout',  workout_path(@workout),  method: :delete, data: { confirm: 'Are you sure?' } %> 
+<br><br>
+Date: 
+<b><%= @workout.date %></b>
+<br>
+Workout type: 
+<b><%= @workout.workout_type %></b>
+<br>
+Workout description: 
+<b><%= @workout.description %></b>
+<br>
+Total calories burned:
+<b><%= @workout.calories_burned %></b>
+
+<br><br>
+<%= link_to "<< all workouts", workouts_path %>

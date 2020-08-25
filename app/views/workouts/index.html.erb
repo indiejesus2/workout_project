@@ -1,0 +1,9 @@
+<h1>These are all workouts:</h1>
+<%= link_to "create new workout", new_workout_path %>
+<ol>
+<% @workouts.each do |workout|%>
+<li><%= workout.date %> - <%= link_to workout.description, workout_path(workout) %> - 
+<%= link_to '(delete)',  workout_path(workout),  method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+<%end%>
+</ol>
+
