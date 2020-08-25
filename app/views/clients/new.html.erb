@@ -1,0 +1,18 @@
+<h1>New Client: </h1>
+
+<%= form_for @client do |f|%>
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
+    <br>
+    <%= f.label :goal_weight %>
+    <%= f.number_field :goal_weight %>
+    <br>
+     <%= f.label :note%>
+    <%= f.text_area :note %>
+    <br>
+
+    <%= f.submit %>
+<%end%>
