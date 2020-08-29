@@ -1,0 +1,14 @@
+<h1>Clients</h1>
+<%= link_to 'Add Client', new_client_path %>
+<ul>
+<% @clients.each do |client| %>
+    <div>
+    <h4><%= client.name %></h4>
+    <%= link_to 'edit', edit_client_path(client) %>
+        
+            <li>Weight: <%= client.weight %></li>
+            <li>Goal Weight: <%= client.goal_weight %></li>
+            <li>Notes: <%= client.note %></li>
+        </ul>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+<h2><%= @client.name %></h2>
+<%= link_to "Edit Client", edit_client_path(@client)%> - 
+<%= link_to 'Delete Client',  client_path(@client),  method: :delete, data: { confirm: 'Are you sure?' } %> <br><br>
+Weight: <%= @client.weight %> <br>
+Goal Weight: <%= @client.goal_weight %> <br>
+Notes: <%= @client.note %> <br> <br>
+
+<%= link_to 'Clients', clients_path %>

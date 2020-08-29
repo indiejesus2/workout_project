@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+    before_action :set_client, only: [:show, :edit, :update, :destroy]
+
     def index
         @clients = Client.all
     end
@@ -14,22 +16,18 @@ class ClientsController < ApplicationController
     end
 
     def show
-        set_client
     end
     
     def edit
-        set_client
     end
 
     def update
-        set_client
         @client.update(client_params)
         redirect_to client_path(@client)
     end
 
     def destroy
-        set_client
-        @client.delete
+        @client.destroy
         redirect_to clients_path
     end
 
