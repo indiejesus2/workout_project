@@ -1,0 +1,9 @@
+<%= form_for @trainer do |trainer_form| %>
+    <%= trainer_form.label :username %>
+    <%= trainer_form.text_field :username %>
+    <br><br>
+    <%= trainer_form.label :password %>
+    <%= trainer_form.password_field :password %>
+    <br><br>
+    <%= trainer_form.submit %>
+<%end%>

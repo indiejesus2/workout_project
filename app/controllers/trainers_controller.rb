@@ -9,14 +9,21 @@ class TrainersController < ApplicationController
 
     def create
         @trainer = Trainer.new(trainer_params)
-        @trainer.save
-        redirect_to trainer_path(@trainer)
+        if @trainer.valid?
+            @trainer.save
+            redirect_to trainer_path(@trainer)
+        else
+            @errors = @trainer.errors.messages
+            render :new
+        end
     end
 
     def show
+        set_trainer
     end
     
     def edit
+        set_trainer
     end
 
     def update
@@ -25,6 +32,7 @@ class TrainersController < ApplicationController
     end
 
     def destroy
+        set_trainer
         @trainer.destroy
         redirect_to trainers_path
     end

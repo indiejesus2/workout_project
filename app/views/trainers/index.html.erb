@@ -1,0 +1,7 @@
+<h1>All Trainers:</h1>
+<%= link_to 'New Trainer', new_trainer_path %>
+<ol>
+<%@trainers.each do |trainer|%>
+    <li><%= link_to trainer.username, trainer_path(trainer) %> - <%= link_to 'edit', edit_trainer_path(trainer) %>  - <%= link_to "delete", trainer, method: :delete, data: { confirm: "Are you sure?" } %></li>
+<%end%>
+</ol>

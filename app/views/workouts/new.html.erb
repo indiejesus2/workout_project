@@ -1,19 +1,6 @@
 <h1>New Workout</h1>
 
 <p><%= link_to "back to index", workouts_path %></p>
-
-<%= form_for @workout do |workout_form| %>
-    <%= workout_form.label :date %>
-    <%= workout_form.date_field :date %>
-    <br>
-    <%= workout_form.label :calories_burned %>
-    <%= workout_form.number_field :calories_burned %>
-    <br>
-    <%= workout_form.label :workout_type %>
-    <%= workout_form.text_field :workout_type %>
-    <br>
-    <%= workout_form.label :description %>
-    <%= workout_form.text_field :description %>
-    <br><br>
-    <%= workout_form.submit %>
-    <% end %>
+<p>
+<%= render 'form'%>
+</p>

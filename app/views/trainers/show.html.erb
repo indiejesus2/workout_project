@@ -1,0 +1,5 @@
+<h1>Display Trainer:</h1>
+<%= link_to '<< All Trainers', trainers_path %>
+<ul>
+    <li> <%= @trainer.username %> - <%= link_to 'edit', edit_trainer_path(@trainer) %> - <%= link_to "delete", @trainer, method: :delete, data: { confirm: "Really?" } %> </li>
+</ul>
