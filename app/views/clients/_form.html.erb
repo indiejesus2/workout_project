@@ -1,0 +1,16 @@
+<%= form_for @client do |f|%>
+    <%= f.label :name, 'Name: ' %>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label :weight, 'Weight: ' %>
+    <%= f.number_field :weight %>
+    <br><br>
+    <%= f.label :goal_weight, 'Goal Weight: ' %>
+    <%= f.number_field :goal_weight %>
+    <br><br>
+     <%= f.label :note, 'Note: ' %>
+    <%= f.text_area :note %>
+    <br><br>
+
+    <%= f.submit %>
+<%end%>

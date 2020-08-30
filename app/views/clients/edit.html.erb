@@ -1,18 +1,8 @@
+<div>
 <h1>Edit Client: </h1>
-
-<%= form_for @client do |f|%>
-    <%= f.label :name%>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :weight %>
-    <%= f.number_field :weight %>
-    <br>
-    <%= f.label :goal_weight %>
-    <%= f.number_field :goal_weight %>
-    <br>
-     <%= f.label :note%>
-    <%= f.text_area :note %>
-    <br>
-
-    <%= f.submit %>
-<%end%>
+<%= link_to 'Clients', clients_path %>
+<%= link_to 'Add Client', new_client_path %>
+</div>
+<%= render 'error' %>
+<br>
+<%= render 'form' %>
