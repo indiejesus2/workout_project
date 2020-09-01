@@ -9,8 +9,7 @@ class TrainersController < ApplicationController
 
     def create
         @trainer = Trainer.new(trainer_params)
-        if @trainer.valid?
-            @trainer.save
+        if @trainer.save
             redirect_to trainer_path(@trainer)
         else
             @errors = @trainer.errors.messages
@@ -27,8 +26,13 @@ class TrainersController < ApplicationController
     end
 
     def update
-        @trainer.update(trainer_params)
-        redirect_to trainer_path(@trainer)
+        set_trainer
+        if @trainer.update(trainer_params)
+            redirect_to trainer_path(@trainer)
+        else
+            @errors = @trainer.errors.messages
+            render :edit
+        end
     end
 
     def destroy

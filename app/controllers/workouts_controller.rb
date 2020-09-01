@@ -9,7 +9,7 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-        @workout = Workout.new(workout_params)
+        @workout = current_trainer.workouts.new(workout_params)
         @workout.save
         redirect_to workout_path(@workout)
     end
@@ -42,7 +42,7 @@ class WorkoutsController < ApplicationController
     end
 
     def workout_params
-        params.require(:workout).permit(:date, :calories_burned, :description, :workout_type, :client_id, :trainer_id)
+        params.require(:workout).permit(:date, :calories_burned, :description, :workout_type, :client_id, :trainer_id, client_attributes: [:name, :weight, :goal_weight, :note])
     end
 
 end

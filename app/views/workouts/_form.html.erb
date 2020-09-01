@@ -11,11 +11,24 @@
     <%= workout_form.label :description %>
     <%= workout_form.text_field :description %>
     <br>
-    <%= workout_form.label :Client %>
-    <%= workout_form.collection_select :client_id, Client.all, :id, :name, include_blank: 'Choose One' %>
+    <h3>New Client</h3>
+    <%= workout_form.fields_for :client, Client.new do |client_fields| %>
+     <%= client_fields.label :name %>
+    <%= client_fields.text_field :name %>
     <br>
-    <%= workout_form.label :Trainer %>
-    <%= workout_form.collection_select :trainer_id, Trainer.all, :id, :username, include_blank: 'Choose One' %>
-    <br><br>
+    <%= client_fields.label :weight %>
+    <%= client_fields.number_field :weight %>
+     <br>
+    <%= client_fields.label :goal_weight %>
+    <%= client_fields.number_field :goal_weight %>
+     <br>
+    <%= client_fields.label :note %>
+    <%= client_fields.text_area :note %>
+     <br>
+    <% end %>
+    <p> <%= workout_form.label :Client %>
+    <%= workout_form.collection_select :client_id, Client.all, :id, :name, include_blank: 'Choose One' %>
+    </p>
+   <br><br>
     <%= workout_form.submit %>
     <% end %>
