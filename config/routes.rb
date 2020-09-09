@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :trainers
-  resources :clients
+  resources :clients do
+    resources :workouts
+  end
   resources :workouts
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

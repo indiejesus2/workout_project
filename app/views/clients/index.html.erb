@@ -7,6 +7,7 @@
         <li>Weight: <%= client.weight %></li>
         <li>Goal Weight: <%= client.goal_weight %></li>
         <li>Notes: <%= client.note %></li>
+        <%= link_to "New Workout", new_client_workout_path(client) %>
 <% end %>
 </ul>
 </div>

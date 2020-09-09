@@ -6,6 +6,7 @@ class WorkoutsController < ApplicationController
 
     def new
         @workout = Workout.new
+        @client_id = params[:client_id]
     end
 
     def create
@@ -20,6 +21,7 @@ class WorkoutsController < ApplicationController
     
     def edit
         set_workout
+        @client_id = params[:client_id]
     end
 
     def update

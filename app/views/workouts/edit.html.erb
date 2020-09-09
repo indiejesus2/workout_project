@@ -1,4 +1,4 @@
 <h1>Edit Workout</h1>
 <p>
-<%= render 'form'%>
+<%= render partial: 'form', locals: {workout: @workout, client_id: @workout.client_id } %>
 </p>

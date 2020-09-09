@@ -2,5 +2,5 @@
 
 <p><%= link_to "back to index", workouts_path %></p>
 <p>
-<%= render 'form'%>
+<%= render partial: 'form', locals: {workout: @workout, client_id: @client_id} %>
 </p>
